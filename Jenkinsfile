@@ -2,17 +2,21 @@
 
 node {
     stage('checkout') {
+        // Clona el repositorio. Asumimos que mvnw, pom.xml, etc., están en la raíz.
         checkout scm
     }
 
     gitlabCommitStatus('build') {
         docker.image('jhipster/jhipster:v8.11.0').inside('-u jhipster -e MAVEN_OPTS="-Duser.home=./"') {
+
+            // --- Comandos ejecutados dentro del contenedor y en la raíz del workspace ---
+
             stage('check java') {
                 sh "java -version"
             }
 
             stage('clean') {
-                sh "chmod +x mvnw"
+                sh "chmod +x mvnw" // Aseguramos permisos
                 sh "./mvnw -ntp clean -P-webapp"
             }
             stage('nohttp') {
@@ -24,8 +28,10 @@ node {
             }
 
             stage('npm install') {
-                sh "./mvnw -ntp com.github.eirslett:frontend-maven-plugin:npm"
+                // Ejecutando npm directamente
+                sh "npm install"
             }
+
             stage('backend tests') {
                 try {
                     sh "./mvnw -ntp verify -P-webapp"
@@ -38,7 +44,7 @@ node {
 
             stage('frontend tests') {
                 try {
-                   sh "npm install"
+                   // Ya no es necesario 'npm install' si se hizo en la etapa anterior
                    sh "npm test"
                 } catch(err) {
                     throw err
@@ -49,9 +55,20 @@ node {
 
             stage('packaging') {
                 sh "./mvnw -ntp verify -P-webapp -Pprod -DskipTests"
-                archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
+                // El artefacto ahora estará en target/*.jar
+                archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
             }
-        }
+
+            // --- La etapa 'publish docker' AHORA ESTÁ DENTRO del bloque .inside() ---
+            stage('publish docker') {
+                withCredentials([usernamePassword(credentialsId: 'dockerhub-login', passwordVariable: 'DOCKER_REGISTRY_PWD', usernameVariable: 'DOCKER_REGISTRY_USER')]) {
+                    // Jib usa el pom.xml, que está en la raíz del workspace dentro del contenedor
+                    sh "./mvnw -ntp jib:build -Ddocker.username=${DOCKER_REGISTRY_USER} -Ddocker.password=${DOCKER_REGISTRY_PWD}"
+                }
+            }
+
+        } // <- Cierre del docker.image(...).inside(...)
+    } // <- Cierre del gitlabCommitStatus(...)
 
        def dockerImage
        stage('publish docker') {
