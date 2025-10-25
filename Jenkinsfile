@@ -74,7 +74,7 @@ node {
                             // 4. Añadimos -DskipTests para evitar el error del servidor de correo
                             sh './mvnw -ntp -DskipTests jib:build'
                         }
-                    }
+                    
                 }
 
     } // <- Cierre del docker.image(...).inside(...)
