@@ -60,19 +60,6 @@ node {
             archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
         }
 
-        stage('TEST: Verificar Credencial Docker') {
-                    steps {
-                        // Aquí usamos el MISMO ID de credencial que usa tu etapa 'publish docker'
-                        // Asumo que se llama 'dockerhub-login', ajústalo si es diferente.
-                        withCredentials([string(credentialsId: 'dockerhub-login', variable: 'DOCKER_PASS')]) {
-
-                            // Intentamos iniciar sesión directamente en Docker Hub
-                            // Usamos tu usuario 'almaeq' y la contraseña de la credencial
-                            sh 'echo $DOCKER_PASS | docker login -u almaeq --password-stdin'
-                        }
-                    }
-                }
-
         // --- La etapa 'publish docker' AHORA ESTÁ DENTRO del bloque .inside() ---
         stage('publish docker') {
                     steps {
@@ -94,11 +81,4 @@ node {
 
     // --- Eliminamos la llave de cierre correspondiente a gitlabCommitStatus ---
 
-       def dockerImage
-       stage('publish docker') {
-       withCredentials([usernamePassword(credentialsId: 'dockerhub-login', passwordVariable:
-       'DOCKER_REGISTRY_PWD', usernameVariable: 'DOCKER_REGISTRY_USER')]) {
-       sh "./mvnw -ntp jib:build"
-        }
-    }
 }
