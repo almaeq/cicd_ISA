@@ -638,7 +638,7 @@
                           <tag>${project.version}</tag>
                           <tag>latest</tag>
                         </tags>
-                        
+
                       </to>
                         <container>
                             <entrypoint>
