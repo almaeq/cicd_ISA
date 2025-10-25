@@ -638,10 +638,7 @@
                           <tag>${project.version}</tag>
                           <tag>latest</tag>
                         </tags>
-                        <auth>
-                          <username>${{DOCKER_REGISTRY_USER}}</username>
-                          <password>${DOCKER_REGISTRY_PWD}</password>
-                        </auth>
+                        
                       </to>
                         <container>
                             <entrypoint>
