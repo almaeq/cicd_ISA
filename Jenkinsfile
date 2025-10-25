@@ -74,11 +74,19 @@ node {
                             // 4. Añadimos -DskipTests para evitar el error del servidor de correo
                             sh './mvnw -ntp -DskipTests jib:build'
                         }
-                    
+
                 }
 
     } // <- Cierre del docker.image(...).inside(...)
 
     // --- Eliminamos la llave de cierre correspondiente a gitlabCommitStatus ---
+
+    def dockerImage
+    stage('publish docker') {
+    withCredentials([usernamePassword(credentialsId: 'dockerhub-login', passwordVariable:
+    'DOCKER_REGISTRY_PWD', usernameVariable: 'DOCKER_REGISTRY_USER')]) {
+    sh "./mvnw -ntp jib:build"
+    }
+    }
 
 }
