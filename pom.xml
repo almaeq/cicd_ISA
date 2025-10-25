@@ -633,7 +633,7 @@
                             </platforms>
                         </from>
                       <to>
-                        <image><image>almaeq/desktop</image>
+                        <image>almaeq/desktop</image>
                         <tags>
                           <tag>${project.version}</tag>
                           <tag>latest</tag>
