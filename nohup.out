@@ -67,3 +67,4 @@ java.nio.file.NoSuchFileException: /home/alma/.cache/JetBrains/IntelliJIdea2025.
 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:765)
 2025-10-25 10:41:05,245 [  44210]   WARN - #o.j.i.maven - updateAllMavenProjects finished: incremental=false, MavenProjectsManager.onProjectStartup cicd_ISA
 2025-10-25 10:41:07,436 [  46401]   WARN - #c.i.p.j.n.WebTypesNpmLoader - Failed to fetch packages for '@web-types' (Full Text): Request failed with status code 429
+2025-10-25 10:47:47,829 [ 446794]   WARN - #c.i.o.v.i.h.RemoteFileInfoImpl - Virtual local file not found for /home/alma/.cache/JetBrains/IntelliJIdea2025.2/httpFileSystem/catalog1.json
