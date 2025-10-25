@@ -75,11 +75,20 @@ node {
 
         // --- La etapa 'publish docker' AHORA ESTÁ DENTRO del bloque .inside() ---
         stage('publish docker') {
-            withCredentials([usernamePassword(credentialsId: 'dockerhub-login', passwordVariable: 'DOCKER_REGISTRY_PWD', usernameVariable: 'DOCKER_REGISTRY_USER')]) {
-                // Jib usa el pom.xml, que está en la raíz del workspace dentro del contenedor
-                sh "./mvnw -ntp jib:build -Ddocker.username=${DOCKER_REGISTRY_USER} -Ddocker.password=${DOCKER_REGISTRY_PWD}"
-            }
-        }
+                    steps {
+                        // 1. Usamos 'usernamePassword' para obtener AMBOS, usuario y pass
+                        // 2. Asignamos la credencial a las variables de entorno que el pom.xml espera
+                        withCredentials([usernamePassword(credentialsId: 'dockerhub-login',
+                                                         usernameVariable: 'DOCKER_REGISTRY_USER',
+                                                         passwordVariable: 'DOCKER_REGISTRY_PWD')]) {
+
+                            // 3. Ejecutamos el comando LIMPIO, sin argumentos -D
+                            //    Jib ahora leerá las variables de entorno automáticamente
+                            // 4. Añadimos -DskipTests para evitar el error del servidor de correo
+                            sh './mvnw -ntp -DskipTests jib:build'
+                        }
+                    }
+                }
 
     } // <- Cierre del docker.image(...).inside(...)
 
