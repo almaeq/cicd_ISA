@@ -1,0 +1,69 @@
+2025-10-25 10:40:22,040 [   1005]   WARN - #c.i.o.v.n.p.FSRecords - Records storage [/home/alma/.cache/JetBrains/IntelliJIdea2025.2/caches/records.dat] was in use by process [OwnershipInfo{owner pid: 8551, acquired at: 1761339839459}] which is not exist now (wasn't closed properly/crashed?) -> re-acquiring forcibly
+2025-10-25 10:40:22,064 [   1029]   WARN - #c.i.o.v.n.p.PersistentFSLoader - [VFS load problem]: VFS wasn't safely shut down: records.wasClosedProperly is false
+2025-10-25 10:40:23,743 [   2708]   WARN - #c.i.o.v.n.p.PersistentFSLoader - [VFS load problem]: NOT_CLOSED_PROPERLY recovered, no problems remain
+2025-10-25 10:40:24,024 [   2989]   WARN - #c.i.s.c.i.StationSocketConnectionLoop - Discovery connection failed with NoSuchFileException (/run/user/1000/jb.station.sock)
+2025-10-25 10:40:24,334 [   3299]   WARN - #c.i.s.c.i.StationSocketConnectionLoop - RecentProjects connection failed with NoSuchFileException (/run/user/1000/jb.station.sock)
+2025-10-25 10:40:39,993 [  18958]   WARN - #c.i.o.f.i.EditorCompositeModelManager - Cannot use saved provider list (savedProviders={split-provider[text-editor;markdown-preview-editor]=[Element: <state/>]}, resolvedProvider=[])
+JCEF_V(40:40:222): Found cef_server binary '/opt/idea-IU-252.26830.84/jbr/lib/cef_server' via System.getProperty('java.home')=/opt/idea-IU-252.26830.84/jbr
+JCEF_V(40:40:222): Java is started via native launcher. Found cef_server path /opt/idea-IU-252.26830.84/jbr/lib/cef_server (via system propety)
+JCEF_I(40:41:117): Found free tcp-port 6188 for server.
+JCEF_I(40:41:117): Found free tcp-port 6189 for java-handlers.
+JCEF_V(40:41:138): Created CefServer instance. Transport port=6188 (backward port=6189). Params:
+[--disable-features=SpareRendererForSitePerProcess, --force-device-scale-factor=1.0, --disable-gpu-process-crash-limit, --disable-component-update, --autoplay-policy=no-user-gesture-required]| log_file=/home/alma/.cache/JetBrains/IntelliJIdea2025.2/log/jcef_32983.log, log_severity=LOGSEVERITY_DISABLE
+2025-10-25 10:40:42,669 [  21634]   WARN - #o.j.i.maven - MavenProjectsTree is inconsistent
+2025-10-25 10:40:42,673 [  21638]   WARN - #o.j.i.maven - updateAllMavenProjects started: incremental=false, MavenProjectsManager.onProjectStartup cicd_ISA
+2025-10-25 10:40:50,881 [  29846]   WARN - #c.i.e.r.RemoteProcessSupport - Remote process stderr:WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+
+2025-10-25 10:40:50,881 [  29846]   WARN - #c.i.e.r.RemoteProcessSupport - WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+2025-10-25 10:40:50,882 [  29847]   WARN - #c.i.e.r.RemoteProcessSupport - Remote process stderr:WARNING: sun.misc.Unsafe::objectFieldOffset has been called by com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper (file:/home/alma/.m2/wrapper/dists/apache-maven-3.9.9-bin/4nf9hui3q3djbarqar9g711ggc/apache-maven-3.9.9/lib/guava-33.2.1-jre.jar)
+
+2025-10-25 10:40:50,882 [  29847]   WARN - #c.i.e.r.RemoteProcessSupport - WARNING: sun.misc.Unsafe::objectFieldOffset has been called by com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper (file:/home/alma/.m2/wrapper/dists/apache-maven-3.9.9-bin/4nf9hui3q3djbarqar9g711ggc/apache-maven-3.9.9/lib/guava-33.2.1-jre.jar)
+2025-10-25 10:40:50,882 [  29847]   WARN - #c.i.e.r.RemoteProcessSupport - Remote process stderr:WARNING: Please consider reporting this to the maintainers of class com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper
+
+2025-10-25 10:40:50,882 [  29847]   WARN - #c.i.e.r.RemoteProcessSupport - WARNING: Please consider reporting this to the maintainers of class com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper
+2025-10-25 10:40:50,882 [  29847]   WARN - #c.i.e.r.RemoteProcessSupport - Remote process stderr:WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+
+2025-10-25 10:40:50,883 [  29848]   WARN - #c.i.e.r.RemoteProcessSupport - WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+2025-10-25 10:41:02,389 [  41354]   WARN - #c.i.v.l.u.StorageId$Directory - Failed to move /home/alma/.cache/JetBrains/IntelliJIdea2025.2/vcs-log/cicd_IS_264881f4_e9a468b8/index to /home/alma/.cache/JetBrains/IntelliJIdea2025.2/vcs-log/cicd_IS_264881f4_e9a468b8/index
+java.nio.file.NoSuchFileException: /home/alma/.cache/JetBrains/IntelliJIdea2025.2/vcs-log/cicd_IS_264881f4_e9a468b8/index
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:94)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:108)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:114)
+	at java.base/sun.nio.fs.UnixFileSystem.move(UnixFileSystem.java:892)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.move(UnixFileSystemProvider.java:309)
+	at com.intellij.platform.core.nio.fs.DelegatingFileSystemProvider.move(DelegatingFileSystemProvider.java:211)
+	at java.base/java.nio.file.Files.move(Files.java:1431)
+	at com.intellij.vcs.log.util.StorageId.cleanupAllStorageFiles(PersistentUtil.kt:58)
+	at com.intellij.vcs.log.data.VcsLogStorageImpl.lambda$createStorageAndIndexBackend$4(VcsLogStorageImpl.java:375)
+	at com.intellij.util.io.IOUtil.openCleanOrResetBroken(IOUtil.java:310)
+	at com.intellij.vcs.log.data.VcsLogStorageImpl.createStorageAndIndexBackend(VcsLogStorageImpl.java:358)
+	at com.intellij.vcs.log.data.VcsLogData.createStorageAndIndex(VcsLogData.java:149)
+	at com.intellij.vcs.log.data.VcsLogData.<init>(VcsLogData.java:92)
+	at com.intellij.vcs.log.impl.VcsLogManager.<init>(VcsLogManager.kt:62)
+	at com.intellij.vcs.log.impl.IdeVcsLogManager.<init>(IdeVcsLogManager.kt:33)
+	at com.intellij.vcs.log.impl.IdeVcsProjectLog.createLogManager(IdeVcsProjectLog.kt:48)
+	at com.intellij.vcs.log.impl.VcsProjectLogBase.getOrCreateLogManager(VcsProjectLogBase.kt:221)
+	at com.intellij.vcs.log.impl.VcsProjectLogBase.access$getOrCreateLogManager(VcsProjectLogBase.kt:52)
+	at com.intellij.vcs.log.impl.VcsProjectLogBase$getOrCreateLogManager$2.invokeSuspend(VcsProjectLogBase.kt:209)
+	at com.intellij.vcs.log.impl.VcsProjectLogBase$getOrCreateLogManager$2.invoke(VcsProjectLogBase.kt)
+	at com.intellij.vcs.log.impl.VcsProjectLogBase$getOrCreateLogManager$2.invoke(VcsProjectLogBase.kt)
+	at com.intellij.platform.backend.observation.PlatformActivityTrackerService$trackConfigurationActivity$2$1.invokeSuspend(PlatformActivityTrackerService.kt:72)
+	at com.intellij.platform.backend.observation.PlatformActivityTrackerService$trackConfigurationActivity$2$1.invoke(PlatformActivityTrackerService.kt)
+	at com.intellij.platform.backend.observation.PlatformActivityTrackerService$trackConfigurationActivity$2$1.invoke(PlatformActivityTrackerService.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:44)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.withContext(Builders.common.kt:166)
+	at kotlinx.coroutines.BuildersKt.withContext(Unknown Source)
+	at com.intellij.platform.backend.observation.PlatformActivityTrackerService.trackConfigurationActivity(PlatformActivityTrackerService.kt:71)
+	at com.intellij.platform.backend.observation.TrackingUtil.trackActivity(util.kt:23)
+	at com.intellij.vcs.log.impl.VcsProjectLogBase.getOrCreateLogManager(VcsProjectLogBase.kt:208)
+	at com.intellij.vcs.log.impl.VcsProjectLogBase.reinitUnsafe(VcsProjectLogBase.kt:188)
+	at com.intellij.vcs.log.impl.VcsProjectLogBase.access$reinitUnsafe(VcsProjectLogBase.kt:52)
+	at com.intellij.vcs.log.impl.VcsProjectLogBase$reinitAsync$1.invokeSuspend(VcsProjectLogBase.kt:182)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:613)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:1189)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:778)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:765)
+2025-10-25 10:41:05,245 [  44210]   WARN - #o.j.i.maven - updateAllMavenProjects finished: incremental=false, MavenProjectsManager.onProjectStartup cicd_ISA
+2025-10-25 10:41:07,436 [  46401]   WARN - #c.i.p.j.n.WebTypesNpmLoader - Failed to fetch packages for '@web-types' (Full Text): Request failed with status code 429
