@@ -68,3 +68,20 @@ java.nio.file.NoSuchFileException: /home/alma/.cache/JetBrains/IntelliJIdea2025.
 2025-10-25 10:41:05,245 [  44210]   WARN - #o.j.i.maven - updateAllMavenProjects finished: incremental=false, MavenProjectsManager.onProjectStartup cicd_ISA
 2025-10-25 10:41:07,436 [  46401]   WARN - #c.i.p.j.n.WebTypesNpmLoader - Failed to fetch packages for '@web-types' (Full Text): Request failed with status code 429
 2025-10-25 10:47:47,829 [ 446794]   WARN - #c.i.o.v.i.h.RemoteFileInfoImpl - Virtual local file not found for /home/alma/.cache/JetBrains/IntelliJIdea2025.2/httpFileSystem/catalog1.json
+2025-10-25 17:41:10,930 [25249895]   WARN - #c.i.o.a.i.ActionUpdater - 363 ms to call on EDT ToggleAnywhereAction#presentation@EditorToolbar (com.intellij.find.editorHeaderActions.ToggleAnywhereAction). Revise AnAction.getActionUpdateThread property
+com.intellij.diagnostic.PluginException: 363 ms to call on EDT ToggleAnywhereAction#presentation@EditorToolbar (com.intellij.find.editorHeaderActions.ToggleAnywhereAction). Revise AnAction.getActionUpdateThread property
+	at com.intellij.diagnostic.PluginProblemReporterImpl.createPluginExceptionByClass(PluginProblemReporterImpl.java:23)
+	at com.intellij.diagnostic.PluginException.createByClass(PluginException.java:90)
+	at com.intellij.openapi.actionSystem.impl.ActionUpdaterKt.reportSlowEdtOperation(ActionUpdater.kt:700)
+	at com.intellij.openapi.actionSystem.impl.ActionUpdaterKt.access$reportSlowEdtOperation(ActionUpdater.kt:1)
+	at com.intellij.openapi.actionSystem.impl.ActionUpdater.computeOnEdt(ActionUpdater.kt:206)
+	at com.intellij.openapi.actionSystem.impl.ActionUpdater.access$computeOnEdt(ActionUpdater.kt:76)
+	at com.intellij.openapi.actionSystem.impl.ActionUpdater$computeOnEdt$1.invokeSuspend(ActionUpdater.kt)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:113)
+	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:613)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:1189)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:778)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:765)

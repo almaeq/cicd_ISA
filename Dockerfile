@@ -5,7 +5,7 @@ FROM jenkins/jenkins:lts-jdk17
 USER root
 
 # Instalamos los paquetes necesarios y el cliente oficial de Docker
-RUN apt-get update && apt-get install -y lsb-release curl
+RUN apt-get -y update && apt-get install -y lsb-release curl
 RUN curl -fsSL https://download.docker.com/linux/$(. /etc/os-release && echo "$ID")/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 RUN echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/$(. /etc/os-release && echo "$ID") \
